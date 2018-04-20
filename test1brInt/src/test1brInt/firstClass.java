@@ -32,8 +32,9 @@ public class firstClass {
 		String str = reader.readLine();
 		
 		//Now that the elements are in the String, I will put them in a List<String>
-		
 		List<String> list = new ArrayList<>(Arrays.asList(str.split(",")));
+		
+		//Calculate the totalAmount of shopping
 		double totalAmount = 0.0;
 		for(String prod : list){
 			if(prod.trim().equalsIgnoreCase("orange")){
@@ -43,6 +44,7 @@ public class firstClass {
 			}
 		}
 		
+		//Currency result
 		NumberFormat currency = NumberFormat.getCurrencyInstance();
 		System.out.println("Total: "+currency.format(totalAmount));
 	}
