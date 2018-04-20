@@ -58,11 +58,23 @@ public class firstClass {
 		
 		//Calculate the totalAmount of shopping
 		double totalAmount = 0.0;
+		int numOranges=1;
+		int numApples=1;
 		for(String prod : list){
 			if(prod.trim().equalsIgnoreCase("orange")){
-				totalAmount += 0.25;
+				if(numOranges==3){
+					numOranges=1;
+				}else{
+					numOranges +=1;
+					totalAmount += 0.25;
+				}
 			}else if(prod.trim().equalsIgnoreCase("apple")){
-				totalAmount += 0.60;
+				if(numApples==2){
+					numApples=1;
+				}else{
+					numApples +=1;
+					totalAmount += 0.60;
+				}
 			}
 		}
 		
