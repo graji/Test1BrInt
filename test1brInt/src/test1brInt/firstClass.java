@@ -17,6 +17,7 @@ import java.util.List;
  * At the end the tilt will show the total amount for the elements being introduced.
  * 
  * * Not case sensitive, example: Orange, orange and ORanGE will be process as the same thing
+ * * Only orange and apple will be processed!! whatever other input won't be processed
  * 
  * */
 
@@ -25,12 +26,33 @@ public class firstClass {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 
+		String str ="";
+		
 		// As I don't know if console is supported I will use the old way by calling a bufferedReader to get the line as a String
 		System.out.println("Please, set the elements you want to buy (Oranges and Apples):"); 
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		
-		String str = reader.readLine();
+		str = reader.readLine();
 		
+		//Please comment the above line and uncomment below lines to apply the fixed tests, instead of inserting elements through console
+		/*
+		 * test 1: 
+		 * str = "Apple, Orange, Apple, Apple";
+		 * 
+		 * test 2: 
+		 * str = "apple, APPLE, orange, ORANGe, ApPLe, AppLE, ORANge";
+		 * 
+		 * test 3:
+		 * str = "apple,APPLE,orange,ORANGe,ApPLe,AppLE,ORANge"; 
+		 * 
+		 * test 4: 
+		 * str = "Apple, Orange, banana, melon, Apple, Apple, strawberry";
+		 * 
+		 * test 5: 
+		 * str = "1, Orange, 5, melon, ####&&££, Apple, strawberry, !!!546&^%£";
+		 * 
+		 * */
+
 		//Now that the elements are in the String, I will put them in a List<String>
 		List<String> list = new ArrayList<>(Arrays.asList(str.split(",")));
 		
